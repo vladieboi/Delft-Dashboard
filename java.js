@@ -9,7 +9,7 @@ var trafficLayer;
 var trafficLayerOn = false;
 
 var navContainer = document.getElementById("myDiv");
-var btns = navContainer.getElementsByClassName("navlist")
+var btns = navContainer.getElementsByClassName("navlist");
 
 var map;
 function initMap() {
@@ -22,7 +22,13 @@ function initMap() {
 	bikeLayer = new google.maps.BicyclingLayer(); 
 	trafficLayer = new google.maps.TrafficLayer();  
 }
+map.data.addListener('mouseover', function(event) {
+         feature.forEachProperty(function(value,property) {
 
+                 console.log(property,':',value);
+         });
+
+    })
 
 function greenOnOff() {
     if (greenLayerOn == false){
@@ -41,16 +47,15 @@ function greenOnOff() {
         document.getElementById("GreenButton").value="Greenery: OFF"
     }      
 }
-/*
+
 function bikeOnOff(){
 	if (bikeLayerOn == false){
 		bikeLayer.setMap(map);
-		bikeLayerOn == true;
+		bikeLayerOn = true;
 		document.getElementById("BikeButton").value="Bike Tracks: ON"
-	}
-	if (bikeLayer == true){
+	} else if (bikeLayerOn == true){
 		bikeLayer.setMap(null);
-		bikeLayerOn == false;
+		bikeLayerOn = false;
 		document.getElementById("BikeButton").value="Bike Tracks: OFF"
 	}
 }
@@ -58,79 +63,17 @@ function bikeOnOff(){
 function trafficOnOff(){
 	if (trafficLayerOn == false){
 		trafficLayer.setMap(map);
-		trafficLayerOn == true;
+		trafficLayerOn = true;
 		document.getElementById("TrafficButton").value="Traffic: ON"
-	}
-	if (trafficLayer == true){
+	} else if (trafficLayerOn == true){
 		trafficLayer.setMap(null);
-		trafficLayerOn == false;
+		trafficLayerOn = false;
 		document.getElementById("TrafficButton").value="Traffic: OFF"
 	}
 }
-*/
 
-function bikeOnOff(){
-	bikevalue = document.getElementById('BikeButton').value;
-	greenvalue = document.getElementById('GreenButton').value;
-	trafficvalue = document.getElementById('TrafficButton').value;
-	if(bikevalue == "Bike Tracks: OFF"){
-		document.getElementById("BikeButton").value="Bike Tracks: ON"
-		displayBikes();
-	} else {
-		document.getElementById("BikeButton").value="Bike Tracks: OFF"
-		initMap();
-		if(greenvalue == "Greenery: ON"){
-			displayGreen();
-		}
-		if(trafficvalue == "Traffic: ON"){
-			displayTraffic();
-		}
-	}
-}
-function trafficOnOff(){
-	trafficvalue = document.getElementById('TrafficButton').value;
-	greenvalue = document.getElementById('GreenButton').value;
-	bikevalue = document.getElementById('BikeButton').value;
-	if(trafficvalue == "Traffic: OFF"){
-		document.getElementById("TrafficButton").value="Traffic: ON"
-		displayTraffic();
-	} else {
-		document.getElementById("TrafficButton").value="Traffic: OFF"
-		initMap();
-		if(bikevalue == "Bike Tracks: ON"){
-			displayBikes();
-		}
-		if(greenvalue == "Greenery: ON"){
-			displayGreen();
-		}
-	}
-}
 
-/* --- STYLE FUNCTIONS --- */
-function styleGreen(){
-	map.data.setStyle({
-	  fillColor: 'green',
-	  strokeColor: 'green',
-	  strokeWeight: 1
-	});
-}
 
-/* --- FUNCTION LAYERS --- */
-function displayGreen(){
-	map.data.loadGeoJson(
-    'http://data-delft.opendata.arcgis.com/datasets/8ec052576bd94271a354bddf6eccd287_1.geojson');
-    styleGreen();
-}
-     
-function displayBikes() {
-	var bikeLayer = new google.maps.BicyclingLayer();
-	bikeLayer.setMap(map);
-}
-
-function displayTraffic() {
-	var trafficLayer = new google.maps.TrafficLayer();
-	trafficLayer.setMap(map);
-}
 
 function displayBuildings() {
 	var WMSLayer = new google.maps.ImageMapType({
