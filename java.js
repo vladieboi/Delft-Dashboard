@@ -22,13 +22,6 @@ function initMap() {
 	bikeLayer = new google.maps.BicyclingLayer(); 
 	trafficLayer = new google.maps.TrafficLayer();  
 }
-map.data.addListener('mouseover', function(event) {
-         feature.forEachProperty(function(value,property) {
-
-                 console.log(property,':',value);
-         });
-
-    })
 
 function greenOnOff() {
     if (greenLayerOn == false){
@@ -72,40 +65,45 @@ function trafficOnOff(){
 	}
 }
 
+// function displayBuildings() {
+// 	var WMSLayer = new google.maps.ImageMapType({
+//     	getTileUrl: function (coord, zoom) {
+//         	var proj = map.getProjection();
+//         	var zfactor = Math.pow(2, zoom);
 
+//         	// get Long Lat coordinates
+//         	var top = proj.fromPointToLatLng(new google.maps.Point(coord.x * 256 / zfactor, coord.y * 256 / zfactor));
+//         	var bot = proj.fromPointToLatLng(new google.maps.Point((coord.x + 1) * 256 / zfactor, (coord.y + 1) * 256 / zfactor));
 
+//         	//create the Bounding box string
+//         	var bbox =     top.lng() + "," +
+//                        bot.lat() + "," +
+//                        bot.lng() + "," +
+//                        top.lat();
 
-function displayBuildings() {
-	var WMSLayer = new google.maps.ImageMapType({
-    	getTileUrl: function (coord, zoom) {
-        	var proj = map.getProjection();
-        	var zfactor = Math.pow(2, zoom);
+//         	//base WMS URL
+//         	var url = "http://geodata.nationaalgeoregister.nl/wijkenbuurten2014/wms?";
+//             	url += "REQUEST=GetMap&SERVICE=WMS&VERSION=1.1.1&SRS=EPSG:4326&BBOX=" + bbox + "&WIDTH=256&HEIGHT=256";
+//             	url += "&LAYERS=" + "cbs_buurten_2014";
+//            	    url += "&STYLES=" + "wijkenbuurten_thema_buurten_gemeentewijkbuurt_gemiddeld_aantal_autos_per_huishouden";
+//            	    url += "&FORMAT=image/png" ;
+//             	url += "&TRANSPARENT=TRUE";
+//         	return url;
+//     	},
+//     tileSize: new google.maps.Size(256, 256),
+//     isPng: true
+// 	});
 
-        	// get Long Lat coordinates
-        	var top = proj.fromPointToLatLng(new google.maps.Point(coord.x * 256 / zfactor, coord.y * 256 / zfactor));
-        	var bot = proj.fromPointToLatLng(new google.maps.Point((coord.x + 1) * 256 / zfactor, (coord.y + 1) * 256 / zfactor));
+// map.overlayMapTypes.push(WMSLayer);
+// }
 
-        	//create the Bounding box string
-        	var bbox =     top.lng() + "," +
-                       bot.lat() + "," +
-                       bot.lng() + "," +
-                       top.lat();
+var wxWarnings = new WmsMapType(
+        "NWS Warnings",
+        "http://mesonet.agron.iastate.edu/cgi-bin/wms/us/wwa.cgi",
+        {layers: "warnings_p,warnings_c"});
 
-        	//base WMS URL
-        	var url = "http://geodata.nationaalgeoregister.nl/wijkenbuurten2014/wms?";
-            	url += "REQUEST=GetMap&SERVICE=WMS&VERSION=1.1.1&SRS=EPSG:4326&BBOX=" + bbox + "&WIDTH=256&HEIGHT=256";
-            	url += "&LAYERS=" + "cbs_buurten_2014";
-           	    url += "&STYLES=" + "wijkenbuurten_thema_buurten_gemeentewijkbuurt_gemiddeld_aantal_autos_per_huishouden";
-           	    url += "&FORMAT=image/png" ;
-            	url += "&TRANSPARENT=TRUE";
-        	return url;
-    	},
-    tileSize: new google.maps.Size(256, 256),
-    isPng: true
-	});
+wxRadar.addToMap(map);
 
-map.overlayMapTypes.push(WMSLayer);
-}
 
 function show(elementID) {
 	var home = document.getElementById('side-home');
