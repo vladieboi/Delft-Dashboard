@@ -1,0 +1,102 @@
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      li i:hover {
+        color: #000000;
+        fill: #000000;
+      }
+
+      li svg:hover {
+        color: #000000;
+        fill: #000000;
+      }
+
+      li i:active {
+        background: #b8b8b8;
+      }
+
+      li svg:active {
+        background: #b8b8b8;
+      }
+
+      .navlist {
+        color: #b8b8b8;
+        fill: #b8b8b8;
+      }
+
+      .navlistActive {
+        color: #000000;
+        fill: #000000;
+      }
+
+      .cd-vertical-nav {
+        height: 100%;
+        width: 5%;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .context-menu {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      .nav-menu {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .material-icons {}
+
+      .material-icons.md-18 { font-size: 18px; }
+      .material-icons.md-24 { font-size: 24px; } /* Default */
+      .material-icons.md-36 { font-size: 36px; }
+
+      .material-icons.md-48 { 
+        font-size: 48px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+      } 
+
+      #map {
+        height: 100%;
+        width: 70%;
+        float: right;
+      }
+
+      #side-home {
+        height: 100%;
+        width: 25%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #side-mobility {
+        height: 100%;
+        width: 25%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+      }
+
+      #side-qol {
+        height: 100%;
+        width: 25%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+      }
+
+      #GreenButton, #BikeButton, #TrafficButton {
+        margin: 20px;
+      }
