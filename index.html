@@ -28,11 +28,28 @@
     </div>
     <div id="side-mobility" class="side">
       <ul class="context-menu">
-        <li><input type="button" value="Bike Tracks: OFF" id="BikeButton" onclick="bikeOnOff();"></li>
-        <li><input type="button" value="Traffic: OFF" id="TrafficButton" onclick="trafficOnOff();"></li>
+        <li>
+            <div class="wrapper">
+                <i class="material-icons md-48" id="contextIcon">directions_bike</i>
+                <h2 class="heading">Bike Tracks</h2>
+                <input type="button" value="Bike Tracks: OFF" id="BikeButton" onclick="bikeOnOff();">
+            </div>
+            <p>This is some sample text for bikes and what this functionality. Lorem Ipsum.</p>
+        </li>
+        <li>
+            <div class="wrapper">
+                <i class="material-icons md-48" id="contextIcon">traffic</i>
+                <h2 class="heading">Traffic View</h2>
+                <input type="button" value="Traffic: OFF" id="TrafficButton" onclick="trafficOnOff();">
+            </div>
+            <p>This is some sample text for traffic and what this functionality can do if you turn it on! Press the button if you want to see how it works.</p>
+        </li>
       </ul>
+
+
       
     </div>
+      
 
     <div id="side-qol" class="side">
       <ul class="context-menu">

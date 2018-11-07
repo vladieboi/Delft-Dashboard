@@ -1,27 +1,49 @@
+/* ------------------------ GENERAL - */
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
       }
 
-      li i:hover {
+      nav li i:hover {
         color: #000000;
         fill: #000000;
       }
 
-      li svg:hover {
+      nav li svg:hover {
         color: #000000;
         fill: #000000;
       }
 
-      li i:active {
+      nav li i:active {
         background: #b8b8b8;
       }
 
-      li svg:active {
+      nav li svg:active {
         background: #b8b8b8;
       }
 
+      div li {
+        background: white;
+      }
+      
+      div li p{
+        margin: 16px;
+        padding-bottom: 16px;
+      }
+
+      div h2{
+        font-family: Arial;
+          margin-right: 16px
+      }
+      div input{
+          margin-right: 16px
+      }
+
+      div li i{
+          margin-left: 16px
+      }
+/* ------------------------ CLASSES - */
       .navlist {
         color: #b8b8b8;
         fill: #b8b8b8;
@@ -41,10 +63,6 @@
         justify-content: center;
       }
 
-      .context-menu {
-        list-style-type: none;
-        padding-left: 0;
-      }
       .nav-menu {
         list-style-type: none;
         padding-left: 0;
@@ -62,6 +80,26 @@
         padding-bottom: 18px;
       } 
 
+      .context-menu {
+        list-style-type: none;
+        padding-left: 0;
+        background: e6e6e6;
+        width: 100%;
+        padding: 8px;
+      }
+
+      .heading {
+        float: right;
+        clear: none;
+        display: inline;
+        margin-bottom: 0;
+      }
+
+      .wrapper {
+        background: white;
+      }
+
+/* ------------------------ IDS - */
       #map {
         height: 100%;
         width: 70%;
@@ -85,6 +123,7 @@
         justify-content: center;
         align-items: center;
         display: none;
+        background: #e6e6e6;
       }
 
       #side-qol {
@@ -97,6 +136,11 @@
         display: none;
       }
 
-      #GreenButton, #BikeButton, #TrafficButton {
-        margin: 20px;
+      #BikeButton, #TrafficButton {
+          display: inline;
+          clear: both;
+          float: right;
+      }
+
+      #contextIcon {
       }

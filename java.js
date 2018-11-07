@@ -1,4 +1,4 @@
-/* --- MAP DISPLAY */
+// ---  DECLARE VARS
 var greenLayer;
 var greenLayerOn = false;
 
@@ -12,6 +12,8 @@ var navContainer = document.getElementById("myDiv");
 var btns = navContainer.getElementsByClassName("navlist");
 
 var map;
+
+// ---  MAP DISPLAY 
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
     	center: {lat: 52.011, lng: 4.357},
@@ -30,6 +32,7 @@ map.data.addListener('mouseover', function(event) {
 
     })
 
+// ---  ON OFF FUNCTIONS
 function greenOnOff() {
     if (greenLayerOn == false){
         greenLayer.loadGeoJson('http://data-delft.opendata.arcgis.com/datasets/8ec052576bd94271a354bddf6eccd287_1.geojson');
@@ -72,9 +75,7 @@ function trafficOnOff(){
 	}
 }
 
-
-
-
+/* ---  WORKING WMS DISPLAY ------------    (WHICH CAN BE LINKED TO A DEMONSTRATIONAL BUTTON)
 function displayBuildings() {
 	var WMSLayer = new google.maps.ImageMapType({
     	getTileUrl: function (coord, zoom) {
@@ -106,7 +107,9 @@ function displayBuildings() {
 
 map.overlayMapTypes.push(WMSLayer);
 }
+*/
 
+// ---  NAVIGATION & CONTEXT MENU FUNCTIONS --- SHOW (CONTEXT-MENU DISPLAY) & ACTIVE (ACTIVE NAVIGATION DISPLAY)
 function show(elementID) {
 	var home = document.getElementById('side-home');
 	home.style.display = 'none';
@@ -116,7 +119,6 @@ function show(elementID) {
 		pages[i].style.display = 'none';
 	}
 	ele.style.display = 'flex';
-
 }
 
 function active(elementID) {
