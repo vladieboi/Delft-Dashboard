@@ -8,9 +8,6 @@
  * See here for license terms:
  * http://opensource.org/licenses/MIT
  */
-
- var WmsMapType;
-
 function WmsMapType(name, url, params, options) {
 	var TILE_SIZE = 256;
 	var EARTH_RADIUS_IN_METERS = 6378137;
