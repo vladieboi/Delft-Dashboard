@@ -21,14 +21,24 @@ function initMap() {
     	disableDefaultUI: true,
 	});
 	greenLayer = new google.maps.Data();
-	bikeLayer = new google.maps.BicyclingLayer(); 
-	trafficLayer = new google.maps.TrafficLayer();  
+    greenLayer.loadGeoJson('http://data-delft.opendata.arcgis.com/datasets/8ec052576bd94271a354bddf6eccd287_1.geojson');
+    bikeLayer = new google.maps.BicyclingLayer(); 
+	trafficLayer = new google.maps.TrafficLayer();
+    greenLayer.addListener('click', function(data_mouseEvent) {
+          var feature = data_mouseEvent.feature;
+          feature.toGeoJson(function(geojson){
+            var infoWnd = new google.maps.InfoWindow({
+              content: JSON.stringify(geojson.properties, null, 2),
+              position: feature.getGeometry().getAt(0).getAt(0)
+            });
+            infoWnd.open(map);
+          });
+        });
 }
 
 // ---  ON OFF FUNCTIONS
 function greenOnOff() {
     if (greenLayerOn == false){
-        greenLayer.loadGeoJson('http://data-delft.opendata.arcgis.com/datasets/8ec052576bd94271a354bddf6eccd287_1.geojson');
         greenLayer.setStyle({
             fillColor: 'green',
             strokeColor: 'green', 
