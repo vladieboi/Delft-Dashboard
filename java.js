@@ -22,14 +22,8 @@ function initMap() {
     greenLayer.loadGeoJson('http://data-delft.opendata.arcgis.com/datasets/8ec052576bd94271a354bddf6eccd287_1.geojson');
 	
     bikeLayer = new google.maps.BicyclingLayer(); 
-	trafficLayer = new google.maps.TrafficLayer();
+	  trafficLayer = new google.maps.TrafficLayer();
 
-   
-    //  map.data.addListener('click', function() {
-    //        event.feature.forEachProperty(function(value,property) {
-    //        console.log(property,':',value);
-    //      }); 
-    // });
     greenLayer.addListener('click', function(data_mouseEvent) {
           var feature = data_mouseEvent.feature;
           feature.toGeoJson(function(geojson){
@@ -40,20 +34,7 @@ function initMap() {
             infoWnd.open(map);
           });
         });
-    
-  //   map.data.setStyle(function(feature) {
-  //   var SD_NAME = feature.getProperty('SD_NAME');
-  //   var color = "gray";
-  //   if (SD_NAME == "Gee") {
-  //     color = "green";
-  //   }
-  //   return {
-  //     fillColor: color,
-  //     strokeWeight: 1
-  //   }
-  // });
 }
-
 
 function greenOnOff() {
     if (greenLayerOn == false){
@@ -95,9 +76,6 @@ function trafficOnOff(){
 		document.getElementById("TrafficButton").value="Traffic: OFF"
 	}
 }
-
-
-
 
 function displayBuildings() {
 	var WMSLayer = new google.maps.ImageMapType({
