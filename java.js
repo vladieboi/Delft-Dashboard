@@ -24,13 +24,6 @@ function initMap() {
 	bikeLayer = new google.maps.BicyclingLayer(); 
 	trafficLayer = new google.maps.TrafficLayer();  
 }
-map.data.addListener('mouseover', function(event) {
-         feature.forEachProperty(function(value,property) {
-
-                 console.log(property,':',value);
-         });
-
-    })
 
 // ---  ON OFF FUNCTIONS
 function greenOnOff() {

@@ -5,22 +5,17 @@
         padding: 0;
       }
 
-      nav li i:hover {
-        color: #000000;
-        fill: #000000;
+      nav ul{
+        width: 100%;
+        text-align: center;
+      }
+      nav ul li{
+        padding-top: 18px;
+        padding-bottom: 18px;
       }
 
-      nav li svg:hover {
-        color: #000000;
-        fill: #000000;
-      }
-
-      nav li i:active {
-        background: #b8b8b8;
-      }
-
-      nav li svg:active {
-        background: #b8b8b8;
+      nav li svg {
+        padding: 0;
       }
 
       div li {
@@ -30,18 +25,21 @@
       div li p{
         margin: 16px;
         padding-bottom: 16px;
+        padding-top:16px;
       }
 
       div h2{
         font-family: Arial;
           margin-right: 16px
       }
+
       div input{
           margin-right: 16px
       }
 
       div li i{
-          margin-left: 16px
+          margin-left: 16px;
+          margin-top: 16px;
       }
 
       h1{
@@ -53,9 +51,26 @@
         fill: #b8b8b8;
       }
 
+      .navlist:hover {
+        color: #001DFF;
+        fill: #001DFF;
+      }
+      .navlist:active {
+        background: #001DFF;
+        color: #FFFFFF;
+        fill: #FFFFFF;
+      }
+
       .navlistActive {
-        color: #000000;
-        fill: #000000;
+        color: #001DFF;
+        fill: #001DFF;
+        background: #FFFFFF;
+      }
+
+      .navlistActive:active{
+        color: #001DFF;
+        fill: #001DFF;
+        background: #FFFFFF;
       }
 
       .cd-vertical-nav {
@@ -72,16 +87,12 @@
         padding-left: 0;
       }
 
-      .material-icons {}
-
       .material-icons.md-18 { font-size: 18px; }
       .material-icons.md-24 { font-size: 24px; } /* Default */
       .material-icons.md-36 { font-size: 36px; }
 
       .material-icons.md-48 { 
         font-size: 48px;
-        padding-top: 18px;
-        padding-bottom: 18px;
       } 
 
       .context-menu {
