@@ -100,7 +100,8 @@
         padding-left: 0;
         background: e6e6e6;
         width: 100%;
-        padding: 8px;
+        padding-left: 8px;
+        padding-right: 8px;
       }
 
       .heading {
@@ -150,16 +151,13 @@
         justify-content: center;
         align-items: center;
         display: none;
+        background: #e6e6e6;
       }
 
-      #BikeButton, #TrafficButton {
+      #BikeButton, #TrafficButton, #GreenButton {
         display: inline;
-        clear: both;
+        clear: right;
         float: right;
-      }
-
-      #contextIcon {
-          
       }
 
       #homeHeading {
