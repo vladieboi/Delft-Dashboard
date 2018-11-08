@@ -43,6 +43,10 @@
       div li i{
           margin-left: 16px
       }
+
+      h1{
+          font-family: Arial;
+      }
 /* ------------------------ CLASSES - */
       .navlist {
         color: #b8b8b8;
@@ -99,6 +103,7 @@
         background: white;
       }
 
+
 /* ------------------------ IDS - */
       #map {
         height: 100%;
@@ -137,10 +142,17 @@
       }
 
       #BikeButton, #TrafficButton {
-          display: inline;
-          clear: both;
-          float: right;
+        display: inline;
+        clear: both;
+        float: right;
       }
 
       #contextIcon {
+          
+      }
+
+      #homeHeading {
+        display: block;
+        text-align: center;
+        width: 100%;
       }
