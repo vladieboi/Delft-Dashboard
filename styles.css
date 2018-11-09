@@ -25,24 +25,13 @@
       div li p{
         margin: 16px;
         padding-bottom: 16px;
-        padding-top:16px;
-      }
-
-      div h2{
-        font-family: Arial;
-          margin-right: 16px
-      }
-
-      div input{
-          margin-right: 16px
-      }
-
-      div li i{
-          margin-left: 16px;
-          margin-top: 16px;
       }
 
       h1{
+          font-family: Arial;
+      }
+
+      p {
           font-family: Arial;
       }
 /* ------------------------ CLASSES - */
@@ -95,6 +84,10 @@
         font-size: 48px;
       } 
 
+      .material-icons.wrap {
+        font-size: 48px;
+      }
+
       .context-menu {
         list-style-type: none;
         padding-left: 0;
@@ -104,18 +97,41 @@
         padding-right: 8px;
       }
 
+      .wrapper {
+        background: white;
+        display: block;
+        height: 4em;
+        position: relative;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 16px;
+      }
+
+      .wrapper-left {
+        float: left;
+        height: 100%;
+        width: 25%;
+      }
+
+      .wrapper-right {
+        float: right;
+        height: 100%;
+        width: 75%;
+        font-family: Arial;
+       }
+
       .heading {
         float: right;
         clear: none;
         display: inline;
         margin-bottom: 0;
+        margin-top: 0;
       }
 
-      .wrapper {
-        background: white;
+      .paragraph {
+        margin-top: 0px;
+        margin-bottom: 16px;
       }
-
-
 /* ------------------------ IDS - */
       #map {
         height: 100%;
@@ -158,6 +174,7 @@
         display: inline;
         clear: right;
         float: right;
+        margin-top: 0.5em;
       }
 
       #homeHeading {
