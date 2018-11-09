@@ -34,16 +34,24 @@ function initMap() {
             infoWnd.open(map);
           });
         });
+     greenLayer.setStyle(function(feature){
+        var styledProperty = feature.getProperty('OPPERVLAKTE');
+        var color = "rgb(175, 255, 155)";
+        if (styledProperty > 200 && styledProperty < 1000){
+            color = "rgb(81, 216, 47)";
+        } else if (styledProperty > 1000) {
+            color = "rgb(26, 104, 6)";
+        } return {
+            fillColor: color,
+            strokeColor: color, 
+            strokeWeight: 1
+        }
+    });
 }
 
 // ---  ON OFF FUNCTIONS
 function greenOnOff() {
     if (greenLayerOn == false){
-        greenLayer.setStyle({
-            fillColor: 'green',
-            strokeColor: 'green', 
-            strokeWeight: 1
-        });
         greenLayer.setMap(map); 
         greenLayerOn = true;
         document.getElementById("GreenButton").value="Greenery: ON"
