@@ -65,8 +65,9 @@
       .cd-vertical-nav {
         height: 100%;
         width: 5%;
+        min-width: 4em;
         float: left;
-        display: flex;
+        display: grid;
         align-items: center;
         justify-content: center;
       }
@@ -86,6 +87,10 @@
 
       .material-icons.wrap {
         font-size: 48px;
+      }
+
+      .side {
+        min-width: 16em;
       }
 
       .context-menu {
@@ -135,8 +140,7 @@
 /* ------------------------ IDS - */
       #map {
         height: 100%;
-        width: 70%;
-        float: right;
+        width: auto;
       }
 
       #side-home {
