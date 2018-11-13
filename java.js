@@ -1,15 +1,31 @@
+/*function pickHex(color1, color2, weight) {
+    var w1 = weight;
+    var w2 = 1 - w1;
+    var rgb = [Math.round(color1[0] * w1 + color2[0] * w2),
+        Math.round(color1[1] * w1 + color2[1] * w2),
+        Math.round(color1[2] * w1 + color2[2] * w2)];
+    return rgb;
+}*/
+
 // ---  DECLARE VARS
+// --- LAYERS
 var greenLayer;
-var greenLayerOn = false;
-
+  var greenProperty;
+  var greenLayerOn = false;
 var bikeLayer;
-var bikeLayerOn = false;
-
+ var bikeLayerOn = false;
 var trafficLayer;
-var trafficLayerOn = false;
+ var trafficLayerOn = false;
 
+
+
+// --- HTML ELEMENTS
 var navContainer = document.getElementById("myDiv");
 var btns = navContainer.getElementsByClassName("navlist");
+var slider = document.getElementById("myRange");
+   var output = document.getElementById("demo");
+   output.innerHTML = slider.value;
+   var sliderValue; 
 
 var map;
 
@@ -22,9 +38,10 @@ function initMap() {
 	});
 	greenLayer = new google.maps.Data();
     greenLayer.loadGeoJson('http://data-delft.opendata.arcgis.com/datasets/8ec052576bd94271a354bddf6eccd287_1.geojson');
-    bikeLayer = new google.maps.BicyclingLayer(); 
+  bikeLayer = new google.maps.BicyclingLayer(); 
 	trafficLayer = new google.maps.TrafficLayer();
-    greenLayer.addListener('click', function(data_mouseEvent) {
+    
+  greenLayer.addListener('click', function(data_mouseEvent) {
           var feature = data_mouseEvent.feature;
           feature.toGeoJson(function(geojson){
             var infoWnd = new google.maps.InfoWindow({
@@ -86,6 +103,7 @@ function trafficOnOff(){
 	}
 }
 
+
 /* ---  WORKING WMS DISPLAY ------------    (WHICH CAN BE LINKED TO A DEMONSTRATIONAL BUTTON)
 function displayBuildings() {
 	var WMSLayer = new google.maps.ImageMapType({
@@ -141,3 +159,12 @@ function active(elementID) {
 	var active = document.getElementById(elementID);
 	active.classList.toggle("navlistActive");
 }
+// SLIDER
+slider.oninput = function() {
+  output.innerHTML = this.value;
+
+}
+function updateSlider(slideAmount) {
+          sliderValue = slideAmount;
+          document.getElementById("slider").innerHTML = sliderValue;
+      }
