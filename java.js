@@ -156,7 +156,7 @@ function show(elementID) {
 	ele.style.display = 'flex';
 }
 
-function legend() { // make it legend(elementID) !!!
+function legend() {
     var legend = document.getElementById('container-legend');
     if (legendCount > 0){
         legend.style.display = 'block';
@@ -165,8 +165,6 @@ function legend() { // make it legend(elementID) !!!
         legend.style.display = 'none';
         legendOn = false;
     }
-    // add var content = getID legend content
-    // display content divs to none
 }
 
 function active(elementID) {

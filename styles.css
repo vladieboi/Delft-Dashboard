@@ -5,9 +5,15 @@
         padding: 0;
       }
 
+      nav {
+        width: 5%
+        min-width: 4em;
+		max-width: 5em;
+      }
+
       nav ul{
-        width: 100%;
         text-align: center;
+		width: 6em;
       }
       nav ul li{
         padding-top: 18px;
@@ -35,30 +41,30 @@
         font-family: Arial;
       }
 /* ------------------------ CLASSES - */
-      .navlist {
+	  .navlist {
         color: #b8b8b8;
         fill: #b8b8b8;
       }
 
       .navlist:hover {
-        color: #001DFF;
-        fill: #001DFF;
+        color: RGB(0, 120, 200); 
+        fill: RGB(0, 120, 200);
       }
       .navlist:active {
-        background: #001DFF;
+        background: RGB(0, 120, 200);
         color: #FFFFFF;
         fill: #FFFFFF;
       }
 
       .navlistActive {
-        color: #001DFF;
-        fill: #001DFF;
+        color: RGB(0, 120, 200);
+        fill: RGB(0, 120, 200);
         background: #FFFFFF;
       }
 
       .navlistActive:active{
-        color: #001DFF;
-        fill: #001DFF;
+        color: RGB(0, 120, 200);
+        fill: RGB(0, 120, 200);
         background: #FFFFFF;
       }
 
@@ -137,6 +143,15 @@
         margin-top: 0px;
         margin-bottom: 16px;
       }
+
+      .legend-hidden { 
+        display: none;
+      }
+
+      .legend-content {
+        display: block;
+      }
+
 /* ------------------------ IDS - */
       #container-map {
         height: 100%;
@@ -170,6 +185,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+		background: #FFFFFF;
       }
 
       #side-mobility {
@@ -192,14 +208,6 @@
         align-items: center;
         display: none;
         background: #e6e6e6;
-      }
-
-      .legend-hidden { /* replace for # */
-        display: none;
-      }
-
-      .legend-content {
-        display: block;
       }
 
       #BikeButton, #TrafficButton, #GreenButton {
