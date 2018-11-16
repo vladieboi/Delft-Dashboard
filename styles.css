@@ -156,7 +156,8 @@
         bottom: 0;
         right: 0;
         background: RGB(255, 255, 255); /* Transparency doesn't work on Safari */
-        margin: 25px;
+        margin-bottom: 25px;
+        margin-right: 15px;
         z-index: 999;
         display: none;
         text-align: center;
@@ -193,7 +194,11 @@
         background: #e6e6e6;
       }
 
-      #content-biketracks, #content-trafficview, #content-greenspaces {
+      .legend-hidden { /* replace for # */
+        display: none;
+      }
+
+      .legend-content {
         display: block;
       }
 

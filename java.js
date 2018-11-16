@@ -8,7 +8,14 @@ var bikeLayerOn = false;
 var trafficLayer;
 var trafficLayerOn = false;
 
-var legendOn = false;
+var legendCount = 0;
+
+var bikeLegend = document.getElementById('legend-biketracks');
+var trafficLegend = document.getElementById('legend-trafficview');
+var greenLegend = document.getElementById('legend-greenspaces');
+
+//        bikeLegend.style.display = 'block';
+
 
 var navContainer = document.getElementById("myDiv");
 var btns = navContainer.getElementsByClassName("navlist");
@@ -56,27 +63,33 @@ function greenOnOff() {
     if (greenLayerOn == false){
         greenLayer.setMap(map); 
         greenLayerOn = true;
+        legendCount++;
+        greenLegend.classList.toggle("legend-content");
         document.getElementById("GreenButton").value="Greenery: ON"
     } else if (greenLayerOn == true){
         greenLayer.setMap(null);
         greenLayerOn = false;
+        legendCount--;
+        greenLegend.classList.remove("legend-content");
         document.getElementById("GreenButton").value="Greenery: OFF"
     }      
-
     legend();
 }
 
 function bikeOnOff(){
-	if (bikeLayerOn == false){
+    if (bikeLayerOn == false){
 		bikeLayer.setMap(map);
 		bikeLayerOn = true;
-		document.getElementById("BikeButton").value="Bike Tracks: ON"
+        legendCount++;
+        bikeLegend.classList.toggle("legend-content");
+        document.getElementById("BikeButton").value="Bike Tracks: ON"
 	} else if (bikeLayerOn == true){
 		bikeLayer.setMap(null);
 		bikeLayerOn = false;
+        legendCount--;
+        bikeLegend.classList.remove("legend-content");
 		document.getElementById("BikeButton").value="Bike Tracks: OFF"
 	}
-
     legend();
 }
 
@@ -84,13 +97,16 @@ function trafficOnOff(){
 	if (trafficLayerOn == false){
 		trafficLayer.setMap(map);
 		trafficLayerOn = true;
+        legendCount++;
+        trafficLegend.classList.toggle("legend-content");
 		document.getElementById("TrafficButton").value="Traffic: ON"
 	} else if (trafficLayerOn == true){
 		trafficLayer.setMap(null);
 		trafficLayerOn = false;
+        legendCount--;
 		document.getElementById("TrafficButton").value="Traffic: OFF"
+        trafficLegend.classList.remove("legend-content");
 	}
-
     legend();
 }
 
@@ -132,8 +148,8 @@ map.overlayMapTypes.push(WMSLayer);
 function show(elementID) {
 	var home = document.getElementById('side-home');
 	home.style.display = 'none';
-	var ele = document.getElementById(elementID); // in case the user clicks on mobility --> getting 'side-mobility' ---- executing -> show('side-mobility');
-	var pages = document.getElementsByClassName('side');
+	var ele = document.getElementById(elementID); // in case the user clicks on mobility 
+	var pages = document.getElementsByClassName('side'); // --> getting 'side-mobility' ---- executing -> show('side-mobility');
 	for(var i = 0; i < pages.length; i++) {
 		pages[i].style.display = 'none';
 	}
@@ -142,10 +158,10 @@ function show(elementID) {
 
 function legend() { // make it legend(elementID) !!!
     var legend = document.getElementById('container-legend');
-    if (legendOn == false){
+    if (legendCount > 0){
         legend.style.display = 'block';
         legendOn = true;
-    } else if (legendOn = true){
+    } else if (legendCount == 0){
         legend.style.display = 'none';
         legendOn = false;
     }
