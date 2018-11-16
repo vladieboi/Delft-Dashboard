@@ -5,9 +5,15 @@
         padding: 0;
       }
 
+      nav {
+        width: 5%
+        min-width: 4em;
+		    max-width: 5em;
+      }
+
       nav ul{
-        width: 100%;
         text-align: center;
+		    width: 6em;
       }
       nav ul li{
         padding-top: 18px;
@@ -27,38 +33,38 @@
         padding-bottom: 16px;
       }
 
-      h1{
-          font-family: Arial;
+      h1, h2, h3, h4, h5, h6 {
+        font-family: Arial;
       }
 
       p {
-          font-family: Arial;
+        font-family: Arial;
       }
 /* ------------------------ CLASSES - */
-      .navlist {
+	    .navlist {
         color: #b8b8b8;
         fill: #b8b8b8;
       }
 
       .navlist:hover {
-        color: #001DFF;
-        fill: #001DFF;
+        color: RGB(0, 120, 200); 
+        fill: RGB(0, 120, 200);
       }
       .navlist:active {
-        background: #001DFF;
+        background: RGB(0, 120, 200);
         color: #FFFFFF;
         fill: #FFFFFF;
       }
 
       .navlistActive {
-        color: #001DFF;
-        fill: #001DFF;
+        color: RGB(0, 120, 200);
+        fill: RGB(0, 120, 200);
         background: #FFFFFF;
       }
 
       .navlistActive:active{
-        color: #001DFF;
-        fill: #001DFF;
+        color: RGB(0, 120, 200);
+        fill: RGB(0, 120, 200);
         background: #FFFFFF;
       }
 
@@ -90,7 +96,7 @@
       }
 
       .side {
-        min-width: 16em;
+        min-width: 18em;
       }
 
       .context-menu {
@@ -137,10 +143,39 @@
         margin-top: 0px;
         margin-bottom: 16px;
       }
+
+      .legend-hidden { 
+        display: none;
+      }
+
+      .legend-content {
+        display: block;
+      }
+
 /* ------------------------ IDS - */
+      #container-map {
+        height: 100%;
+        width: 100%;
+        right: 0;
+        z-index: 0;
+      }
+
       #map {
         height: 100%;
         width: auto;
+      }
+
+      #container-legend {
+        width: 100px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: RGB(255, 255, 255); /* Transparency doesn't work on Safari */
+        margin-bottom: 25px;
+        margin-right: 15px;
+        z-index: 999;
+        display: none;
+        text-align: center;
       }
 
       #side-home {
@@ -150,6 +185,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+		    background: #FFFFFF;
       }
 
       #side-mobility {
