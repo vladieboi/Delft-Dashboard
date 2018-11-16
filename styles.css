@@ -8,12 +8,12 @@
       nav {
         width: 5%
         min-width: 4em;
-		max-width: 5em;
+		    max-width: 5em;
       }
 
       nav ul{
         text-align: center;
-		width: 6em;
+		    width: 6em;
       }
       nav ul li{
         padding-top: 18px;
@@ -41,7 +41,7 @@
         font-family: Arial;
       }
 /* ------------------------ CLASSES - */
-	  .navlist {
+	    .navlist {
         color: #b8b8b8;
         fill: #b8b8b8;
       }
@@ -185,7 +185,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-		background: #FFFFFF;
+		    background: #FFFFFF;
       }
 
       #side-mobility {
