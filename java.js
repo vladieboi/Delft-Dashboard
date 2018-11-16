@@ -10,8 +10,9 @@
 // ---  DECLARE VARS
 // --- LAYERS
 var greenLayer;
-  var greenProperty;
   var greenLayerOn = false;
+  var greenArea;
+  var greenArea2;
 var bikeLayer;
  var bikeLayerOn = false;
 var trafficLayer;
@@ -28,7 +29,8 @@ var slider = document.getElementById("myRange");
    var sliderValue; 
 
 var map;
-
+var color;
+var color2;
 // ---  MAP DISPLAY 
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
@@ -52,11 +54,11 @@ function initMap() {
           });
         });
      greenLayer.setStyle(function(feature){
-        var styledProperty = feature.getProperty('OPPERVLAKTE');
-        var color = "rgb(175, 255, 155)";
-        if (styledProperty > 200 && styledProperty < 1000){
+        color = "rgb(175, 255, 155)";
+        greenArea = feature.getProperty('OPPERVLAKTE');
+        if (greenArea > 200 && greenArea < 1000){
             color = "rgb(81, 216, 47)";
-        } else if (styledProperty > 1000) {
+        } else if (greenArea > 1000) {
             color = "rgb(26, 104, 6)";
         } return {
             fillColor: color,
@@ -159,12 +161,32 @@ function active(elementID) {
 	var active = document.getElementById(elementID);
 	active.classList.toggle("navlistActive");
 }
-// SLIDER
-slider.oninput = function() {
-  output.innerHTML = this.value;
+
+// // SLIDER
+// function updateSlider(slideAmount) {
+//           sliderValue = slideAmount;
+//           document.getElementById("slider").innerHTML = sliderValue;
+//               if ((sliderValue * 20) > greenArea) {
+//                    greenLayer.overrideStyle(){
+//                  fillColor = "red";   
+//               }
+//       }
+//   }
+function updateSlider(slideAmount){
+       sliderValue = slideAmount;
+        document.getElementById("demo").innerHTML = sliderValue;
+       greenLayer.setStyle(function(feature){
+              greenArea = feature.getProperty('OPPERVLAKTE');
+              if (sliderValue > greenArea){
+                  color2 = 'red';
+              } else {
+                  color2 = color;
+              } return {
+                fillColor: color2,
+                strokeColor: color2, 
+                strokeWeight: 1
+              }
+        });
 
 }
-function updateSlider(slideAmount) {
-          sliderValue = slideAmount;
-          document.getElementById("slider").innerHTML = sliderValue;
-      }
+  
