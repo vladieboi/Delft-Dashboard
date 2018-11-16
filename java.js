@@ -8,6 +8,8 @@ var bikeLayerOn = false;
 var trafficLayer;
 var trafficLayerOn = false;
 
+var legendOn = false;
+
 var navContainer = document.getElementById("myDiv");
 var btns = navContainer.getElementsByClassName("navlist");
 
@@ -60,6 +62,8 @@ function greenOnOff() {
         greenLayerOn = false;
         document.getElementById("GreenButton").value="Greenery: OFF"
     }      
+
+    legend();
 }
 
 function bikeOnOff(){
@@ -72,6 +76,8 @@ function bikeOnOff(){
 		bikeLayerOn = false;
 		document.getElementById("BikeButton").value="Bike Tracks: OFF"
 	}
+
+    legend();
 }
 
 function trafficOnOff(){
@@ -84,6 +90,8 @@ function trafficOnOff(){
 		trafficLayerOn = false;
 		document.getElementById("TrafficButton").value="Traffic: OFF"
 	}
+
+    legend();
 }
 
 /* ---  WORKING WMS DISPLAY ------------    (WHICH CAN BE LINKED TO A DEMONSTRATIONAL BUTTON)
@@ -120,7 +128,7 @@ map.overlayMapTypes.push(WMSLayer);
 }
 */
 
-// ---  NAVIGATION & CONTEXT MENU FUNCTIONS --- SHOW (CONTEXT-MENU DISPLAY) & ACTIVE (ACTIVE NAVIGATION DISPLAY)
+// ---  NAVIGATION & CONTEXT MENU FUNCTIONS --- SHOW (CONTEXT-MENU DISPLAY) & ACTIVE (ACTIVE FOR NAVIGATION DISPLAY)
 function show(elementID) {
 	var home = document.getElementById('side-home');
 	home.style.display = 'none';
@@ -132,10 +140,22 @@ function show(elementID) {
 	ele.style.display = 'flex';
 }
 
+function legend() { // make it legend(elementID) !!!
+    var legend = document.getElementById('container-legend');
+    if (legendOn == false){
+        legend.style.display = 'block';
+        legendOn = true;
+    } else if (legendOn = true){
+        legend.style.display = 'none';
+        legendOn = false;
+    }
+    // add var content = getID legend content
+    // display content divs to none
+}
+
 function active(elementID) {
 	var x = document.getElementsByClassName("navlistActive");
-	var i;
-	for (i = 0; i < x.length; i++) {
+	for (var i = 0; i < x.length; i++) {
 		x[i].classList.remove("navlistActive");
 	}
 	var active = document.getElementById(elementID);

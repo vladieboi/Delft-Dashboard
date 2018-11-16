@@ -27,12 +27,12 @@
         padding-bottom: 16px;
       }
 
-      h1{
-          font-family: Arial;
+      h1, h2, h3, h4, h5, h6 {
+        font-family: Arial;
       }
 
       p {
-          font-family: Arial;
+        font-family: Arial;
       }
 /* ------------------------ CLASSES - */
       .navlist {
@@ -90,7 +90,7 @@
       }
 
       .side {
-        min-width: 16em;
+        min-width: 18em;
       }
 
       .context-menu {
@@ -138,9 +138,28 @@
         margin-bottom: 16px;
       }
 /* ------------------------ IDS - */
+      #container-map {
+        height: 100%;
+        width: 100%;
+        right: 0;
+        z-index: 0;
+      }
+
       #map {
         height: 100%;
         width: auto;
+      }
+
+      #container-legend {
+        width: 100px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: RGB(255, 255, 255); /* Transparency doesn't work on Safari */
+        margin: 25px;
+        z-index: 999;
+        display: none;
+        text-align: center;
       }
 
       #side-home {
@@ -172,6 +191,10 @@
         align-items: center;
         display: none;
         background: #e6e6e6;
+      }
+
+      #content-biketracks, #content-trafficview, #content-greenspaces {
+        display: block;
       }
 
       #BikeButton, #TrafficButton, #GreenButton {
