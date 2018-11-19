@@ -188,6 +188,17 @@
 		    background: #FFFFFF;
       }
 
+      #side-living {
+        height: 100%;
+        width: 25%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        background: #e6e6e6;
+      }
+
       #side-mobility {
         height: 100%;
         width: 25%;
@@ -199,7 +210,40 @@
         background: #e6e6e6;
       }
 
+      #side-work {
+        height: 100%;
+        width: 25%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        background: #e6e6e6;
+      }
+
       #side-qol {
+        height: 100%;
+        width: 25%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        background: #e6e6e6;
+      }
+
+      #side-sustain {
+        height: 100%;
+        width: 25%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        background: #e6e6e6;
+      }
+
+      #side-facilities {
         height: 100%;
         width: 25%;
         float: left;
