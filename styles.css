@@ -180,7 +180,7 @@
         background: #e6e6e6;
       }
 
-      #BikeButton, #TrafficButton, #GreenButton {
+      #BikeButton, #TrafficButton, #GreenButton, #ParkingButton {
         display: inline;
         clear: right;
         float: right;

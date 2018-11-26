@@ -7,6 +7,7 @@
     <link href="styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <script src="data.js"></script>
   </head>
 
   <body>
@@ -76,7 +77,7 @@
       <div id="map"></div>
         <div class="slidecontainer">
           <h1>Add houses pls</h1>
-          <input type="range" min="1" max="300" value="50" class="slider" id="myRange" onchange="updateSlider(this.value)">
+          <input type="range" min="1" max="100" value="50" class="slider" id="myRange" onchange="updateSlider(this.value)">
           <p>Houses: <span id="demo"></span></p>
         </div>
         
@@ -85,7 +86,6 @@
     
 
     <script type="text/javascript" src="java.js"></script>
-
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPp8bY1glrU82av--mNVFFNBFfV-qTeV0&callback=initMap"></script>
   </body>
 </html>
