@@ -174,7 +174,7 @@
       </ul>  
     </div>
     
-    <div id="container-map">
+    <div class ="container-map">
         <div id="container-legend">
             <h3>Legend</h3>
             <div id="legend-biketracks" class="legend-hidden">
@@ -186,10 +186,15 @@
             <div id="legend-greenspaces" class="legend-hidden">
               <p>Green Spaces</p>
             </div>
-			<div id="legend-parkingspaces" class="legend-hidden">
-			  <p>Parking Spaces</p>
-			</div>
-        </div>        
+      			<div id="legend-parkingspaces" class="legend-hidden">
+      			  <p>Parking Spaces</p>
+      			</div>
+        </div>  
+        <div class="slidecontainer">
+          <h1>Add houses pls</h1>
+          <input type="range" min="1" max="100" value="50" class="slider" id="myRange" onchange="updateSlider(this.value)">
+          <p>Houses: <span id="demo"></span></p>
+        </div>      
         <div id="map">
         </div>
     </div>
