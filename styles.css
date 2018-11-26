@@ -266,3 +266,13 @@
         text-align: center;
         width: 100%;
       }
+
+	  #logo {
+		width: 4em;
+		content:url("https://i.imgur.com/d0RxYi1.png");
+	  }
+
+	  #logo:hover {
+		width: 4em;
+		content:url("https://i.imgur.com/qnh4gZ3.png");
+      }
