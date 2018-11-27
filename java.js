@@ -18,7 +18,7 @@ var legendCount = 0;
 var bikeLegend = document.getElementById('legend-biketracks');
 var trafficLegend = document.getElementById('legend-trafficview');
 var greenLegend = document.getElementById('legend-greenspaces');
-var parkingLegend = document.getElementById('legend-parking');
+var parkingLegend = document.getElementById('legend-parkingspaces');
 
 //        bikeLegend.style.display = 'block';
 
@@ -176,7 +176,7 @@ function parkingOnOff(){
         parkingLayer.setMap(map); 
         parkingLayerOn = true;
         legendCount++;
-        parkingLegend.classList.toggle("legend-parkingspaces");
+        parkingLegend.classList.toggle("legend-content");
         document.getElementById("ParkingButton").value="Parking: ON"
     } else if (parkingLayerOn == true){
         parkingLayer.setMap(null);
@@ -244,6 +244,7 @@ function legend() {
         legendOn = false;
     }
 }
+
 
 function active(elementID) {
 	var x = document.getElementsByClassName("navlistActive");
