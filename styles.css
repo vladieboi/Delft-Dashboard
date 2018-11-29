@@ -35,7 +35,7 @@
         padding-bottom: 16px;
       }
 
-      h1, h2, h3, h4, h5, h6 {
+      h1, h2, h3, h4, h5, h6, label {
         font-family: Arial;
       }
 
@@ -193,7 +193,7 @@
       }
 
 	  #tutorial {
-		background: RGB(64, 64, 64, 0.8);
+		background: RGB(64, 64, 64, 0.9);
 		position: absolute;
 		width: 70%;
 		right: 0;
@@ -208,12 +208,16 @@
 		color: white;
 		list-style-type: none;
 		text-align: center;
+		display: inline;
 	  }
 
 	  #tutorial-content p {
 		margin: 0;
       }
 
+	  #gestures {
+		list-style-type: none;
+	  }
       #container-legend {
         width: 100px;
         position: absolute;

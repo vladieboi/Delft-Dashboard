@@ -35,6 +35,8 @@ var map;
 var alertColor;
 var colorGreen;
 var colorParking = "hsl(230, 100%,  70%)";
+// --- TUTORIAL DISPLAY
+
 
 // ---  MAP DISPLAY 
 function initMap() {
@@ -254,6 +256,15 @@ function active(elementID) {
 	var active = document.getElementById(elementID);
 	active.classList.toggle("navlistActive");
 }
+
+function checkHide() {
+	var checkBox = document.getElementById("tutOn".value);
+	var tut = document.getElementById("tutorial");
+	tut.style.display = 'none';
+}
+
+
+
 
 var parkingData = 
   {"type":"FeatureCollection","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [
