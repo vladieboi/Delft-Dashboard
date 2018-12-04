@@ -48,8 +48,13 @@
 	  }
 
 	  .navlist {
-        color: #b8b8b8;
-        fill: #b8b8b8;
+        color: #FFFFFF;
+        fill: #FFFFFF;
+		background: rGB(0, 120, 200);
+      }
+
+	  .navlist:hover {
+		background: RGB(0, 120, 200, 0.7);
       }
 
       .navlist:active {
@@ -64,11 +69,19 @@
         background: #FFFFFF;
       }
 
+	  .navlistActive:hover{
+		color: RGB(0, 120, 200);
+        fill: RGB(0, 120, 200);
+        background: #FFFFFF;
+	  }
+
       .navlistActive:active{
         color: RGB(0, 120, 200);
         fill: RGB(0, 120, 200);
         background: #FFFFFF;
       }
+	  
+
 
       .cd-vertical-nav {
         height: 100%;
@@ -78,7 +91,7 @@
         display: grid;
         align-items: center;
         justify-content: center;
-		background: #FFFFFF;
+		background: RGB(0, 120, 200);
       }
 
       .nav-menu {
@@ -107,7 +120,7 @@
       .context-menu {
         list-style-type: none;
         padding-left: 0;
-        background: e6e6e6;
+        background: FFFFFF;
         width: 100%;
         padding-left: 8px;
         padding-right: 8px;
@@ -247,7 +260,7 @@
         justify-content: center;
         align-items: center;
         display: none;
-        background: #e6e6e6;
+        background: #FFFFFF;
       }
 
       #side-mobility {
@@ -257,7 +270,7 @@
         justify-content: center;
         align-items: center;
         display: none;
-        background: #e6e6e6;
+        background: #FFFFFF;
       }
 
       #side-work {
@@ -267,7 +280,7 @@
         justify-content: center;
         align-items: center;
         display: none;
-        background: #e6e6e6;
+        background: #FFFFFF;
       }
 
       #side-qol {
@@ -277,7 +290,7 @@
         justify-content: center;
         align-items: center;
         display: none;
-        background: #e6e6e6;
+        background: #FFFFFF;
       }
 
       #side-sustain {
@@ -287,7 +300,7 @@
         justify-content: center;
         align-items: center;
         display: none;
-        background: #e6e6e6;
+        background: #FFFFFF;
       }
 
       #side-facilities {
@@ -297,7 +310,7 @@
         justify-content: center;
         align-items: center;
         display: none;
-        background: #e6e6e6;
+        background: #FFFFFF;
       }
 
       #BikeButton, #TrafficButton, #GreenButton, #ParkingButton {
@@ -315,11 +328,11 @@
 
 	  #logo {
 		width: 4em;
-		content:url("https://i.imgur.com/d0RxYi1.png");
+		content:url("https://i.imgur.com/qnh4gZ3.png");
 	  }
 
 	  #logo:hover {
 		width: 4em;
-		content:url("https://i.imgur.com/qnh4gZ3.png");
+		content:url("https://i.imgur.com/d0RxYi1.png");
       }
 

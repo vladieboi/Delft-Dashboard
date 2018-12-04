@@ -35,7 +35,7 @@ var map;
 var alertColor;
 var colorGreen;
 var colorParking = "hsl(230, 100%,  70%)";
-// --- TUTORIAL DISPLAY
+
 
 
 // ---  MAP DISPLAY 
@@ -263,7 +263,17 @@ function checkHide() {
 	tut.style.display = 'none';
 }
 
-
+//
+//function logoCycle() {
+//	var home = document.getElementById('side-home');
+//	var logo = document.getElementById('logo');
+//	
+//	if (home.style.display == 'none') {
+//		logo.style.content = url("https://i.imgur.com/qnh4gZ3.png");
+//	} else {
+//		logo.style.content = url("https://i.imgur.com/d0RxYi1.png");
+//	}
+//}
 
 
 var parkingData = 
