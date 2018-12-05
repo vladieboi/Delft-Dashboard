@@ -1,17 +1,11 @@
 // ---  DECLARE VARS
-var greenLayer;
-var greenLayerOn = false;
-var greenArea;
+var greenLayer; var greenLayerOn = false; var greenArea; var greenSlider; 
 
-var bikeLayer;
-var bikeLayerOn = false;
+var bikeLayer; var bikeLayerOn = false;
 
-var trafficLayer;
-var trafficLayerOn = false;
+var trafficLayer; var trafficLayerOn = false;
 
-var parkingLayer;
-var parkingLayerOn = false;
-var parkingSpots;
+var parkingLayer; var parkingLayerOn = false; var parkingSpots; var parkingSpotsMax;
 
 var legendCount = 0;
 
@@ -22,19 +16,20 @@ var parkingLegend = document.getElementById('legend-parkingspaces');
 
 //        bikeLegend.style.display = 'block';
 
-
 var navContainer = document.getElementById("myDiv");
 var btns = navContainer.getElementsByClassName("navlist");
 
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
 output.innerHTML = slider.value;
-var sliderValue; 
+var parsedSlider; 
+
+var slideAmount; var sliderValue; var sliderValue1; var sliderValue2; var sliderValue3;
 
 var map;
 var alertColor;
 var colorGreen;
-var colorParking = "hsl(230, 100%,  70%)";
+var colorParking;
 
 
 
@@ -54,8 +49,16 @@ function initMap() {
   bikeLayer = new google.maps.BicyclingLayer(); 
   trafficLayer = new google.maps.TrafficLayer();
 
-  greenSetStyle();
-  parkingSetStyle();
+  greenLayer.setStyle({
+     fillColor: 'green',
+      strokeColor: 'green', 
+        strokeWeight: 1
+  });
+  parkingLayer.setStyle({
+     fillColor: 'blue',
+      strokeColor: 'blue', 
+        strokeWeight: 1
+  });
   
   greenLayer.addListener('click', function(data_mouseEvent) {
           var feature = data_mouseEvent.feature;
@@ -70,14 +73,32 @@ function initMap() {
 }
  
 function greenSetStyle(){
-  colorGreen = "rgb(175, 255, 155)";
     greenLayer.setStyle(function(feature){
       greenArea = feature.getProperty('OPPERVLAKTE');
-        if (greenArea > 200 && greenArea < 1000){
-            colorGreen = "rgb(81, 216, 47)";
-        } else if (greenArea > 1000) {
-            colorGreen = "rgb(26, 104, 6)";
-        } return {
+        if (greenArea < 200){
+            colorGreen = "hsl(115, 100%, " +sliderValue3+ "%)";
+              if (sliderValue3 > 85){
+              colorGreen = "red";
+             }
+          }
+          if (greenArea > 200 && greenArea < 500){
+             colorGreen = "hsl(115, 100%, " +sliderValue2+ "%)";
+              if (sliderValue2 > 85){
+              colorGreen = "red";
+             }
+          }
+          if (greenArea > 500 && greenArea < 1500) { 
+             colorGreen = "hsl(115, 100%, " +sliderValue1+ "%)";
+             if (sliderValue1 > 85){
+              colorParking = "red";
+             }
+          } if (greenArea > 1500){
+             colorGreen = "hsl(115, 100%, " +sliderValue+ "%)";
+              if (sliderValue > 85){
+              colorGreen = "red";
+             }
+          }
+           return {
             fillColor: colorGreen,
             strokeColor: colorGreen, 
             strokeWeight: 1
@@ -88,11 +109,28 @@ function greenSetStyle(){
 function parkingSetStyle(){
  parkingLayer.setStyle(function(feature){
         parkingSpots = feature.getProperty('aantal');
-        // if (parkingSpots > 1 && parkingSpots < 5){
-        //      colorParking = "rgb(81, 216, 47)";
-        //  } else if (parkingSpots > 5) {
-        //      colorParking = "rgb(26, 104, 6)";
-        //   } 
+          if (parkingSpots == 1){
+            colorParking = "hsl(230, 100%, " +sliderValue3+ "%)";
+              if (sliderValue3 > 85){
+              colorParking = "red";
+             }
+          }
+          if (parkingSpots > 1 && parkingSpots < 5){
+             colorParking = "hsl(230, 100%, " +sliderValue2+ "%)";
+              if (sliderValue2 > 85){
+              colorParking = "red";
+             }
+          } if (parkingSpots > 5 && parkingSpots < 10) { 
+             colorParking = "hsl(230, 100%, " +sliderValue1+ "%)";
+             if (sliderValue1 > 85){
+              colorParking = "red";
+             }
+          } if (parkingSpots > 10){
+             colorParking = "hsl(230, 100%, " +sliderValue+ "%)";
+              if (sliderValue > 85){
+              colorParking = "red";
+             }
+          } 
         return {
             fillColor: colorParking,
             strokeColor: colorParking, 
@@ -102,25 +140,62 @@ function parkingSetStyle(){
 }
 
 function updateSlider(slideAmount){
-       document.getElementById("demo").innerHTML = colorParking;
        sliderValue = slideAmount;
-       colorParking = "hsl(230, 100%,"+ slideAmount + "%)";
+       parsedSlider = parseInt(slideAmount);
+       sliderValue1 = 20 + parsedSlider;
+       sliderValue2 = 40 + parsedSlider;
+       sliderValue3 = 60 + parsedSlider;
+
        parkingSetStyle();
-
-       greenLayer.setStyle(function(feature){
-              greenArea = feature.getProperty('OPPERVLAKTE');
-              if (sliderValue > greenArea){
-                  alertColor = 'red';
-              } else {
-                  greenSetStyle();
-              } return {
-                fillColor: alertColor,
-                strokeColor: alertColor, 
-                strokeWeight: 1
-              }
-        });
+       greenSetStyle();
 }
-
+slider.oninput = function() {
+    output.innerHTML = this.value;
+} 
+// KPI KPI KPI KPI KPI KPI KPI //
+/* Set radius for all circles */
+   var r = 50;
+    var circles = document.querySelectorAll('.circle');
+    var total_circles = circles.length;
+    for (var i = 0; i < total_circles; i++) {
+        circles[i].setAttribute('r', r);
+    }
+    /* set meter's wrapper dimension */
+    var meter_dimension = (r * 2) + 100;
+    var wrapper = document.querySelector('#wrapper');
+    wrapper.style.width = meter_dimension + 'px';
+    wrapper.style.height = meter_dimension + 'px';
+    /* add strokes to circles  */
+    var cf = 2 * Math.PI * r;
+    var semi_cf = cf / 2;
+    var semi_cf_1by3 = semi_cf / 3;
+    var semi_cf_2by3 = semi_cf_1by3 * 2;
+    document.querySelector('#outline_curves')
+        .setAttribute('stroke-dasharray', semi_cf + ',' + cf);
+    document.querySelector('#low')
+        .setAttribute('stroke-dasharray', semi_cf + ',' + cf);
+    document.querySelector('#avg')
+        .setAttribute('stroke-dasharray', semi_cf_2by3 + ',' + cf);
+    document.querySelector('#high')
+        .setAttribute('stroke-dasharray', semi_cf_1by3 + ',' + cf);
+    document.querySelector('#outline_ends')
+        .setAttribute('stroke-dasharray', 2 + ',' + (semi_cf - 2));
+    document.querySelector('#mask')
+        .setAttribute('stroke-dasharray', semi_cf + ',' + cf);
+    /*bind range slider event*/
+    var slider = document.querySelector('#myRange');
+    var lbl = document.querySelector("#lbl");
+    var mask = document.querySelector('#mask');
+    var meter_needle =  document.querySelector('#meter_needle');
+    function range_change_event() {
+        var percent = myRange.value;
+        var meter_value = semi_cf - ((percent * semi_cf) / 100);
+        mask.setAttribute('stroke-dasharray', meter_value + ',' + cf);
+        meter_needle.style.transform = 'rotate(' + (270 + ((percent * 180) / 100)) + 'deg)';
+        lbl.textContent = percent + '%';
+    }
+    slider.addEventListener('input', range_change_event);
+        
 // ---  ON OFF FUNCTIONS
 function greenOnOff() {
     if (greenLayerOn == false){

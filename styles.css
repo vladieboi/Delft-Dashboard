@@ -81,8 +81,6 @@
         background: #FFFFFF;
       }
 	  
-
-
       .cd-vertical-nav {
         height: 100%;
         width: 5%;
@@ -91,13 +89,13 @@
         display: grid;
         align-items: center;
         justify-content: center;
-		background: RGB(0, 120, 200);
+		    background: RGB(0, 120, 200);
       }
 
       .nav-menu {
         list-style-type: none;
         padding-left: 0;
-		background: #FFFFFF;
+		    background: #FFFFFF;
       }
 
       .material-icons.md-18 { font-size: 18px; }
@@ -114,7 +112,7 @@
 
       .side {
         min-width: 18em;
-		display: flex;
+		    display: flex;
       }
 
       .context-menu {
@@ -174,8 +172,8 @@
       .slidecontainer {
         width: 250px;
         position: absolute;
-		bottom: 0;
-		right: 0;
+    		bottom: 0;
+    		right: 0;
         background: RGB(255, 255, 255);
         margin-bottom: 25px;
         margin-right: 15px;
@@ -204,7 +202,65 @@
         height: 100%;
         width: auto;
       }
+  #meterContainer{
+  width: 300px;
+  position: absolute;
+  top:0;
+  right: 0;
+  background: RGB(255, 255, 255); /* Transparency doesn't work on Safari */
+  margin-top: 15px;
+  margin-right: 15px;
+  z-index: 999;
+  text-align: center;
+}      
+    #wrapper {
+      position: relative;
+      margin: auto;
+    }
+    #meter {
+      width: 100%; height: 100%;
+      transform: rotateX(180deg);
 
+    }
+    .circle {
+      fill: none;
+
+    }
+    .outline, #mask {
+      stroke: #F1F1F1;
+      stroke-width: 18;
+
+    }
+    #mask{
+      stroke-opacity:0.7;
+   
+    }
+    .range {
+      stroke-width: 15;
+    }
+    #lbl {
+      background-color: #4B4C51;
+      border-radius: 2px;
+      color: white;
+      font-family: 'courier new';
+      font-size: 15pt;
+      font-weight: bold;
+      padding: 4px 4px 2px 4px;
+      right: -48px;
+    }
+    #meter_needle {
+      height: 30%;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 20%;
+      transform-origin: bottom center;
+      /*orientation fix*/
+      transform: rotate(270deg);
+    }
+    
+/* TUTORIAL TUTORIAL TUTORIAL */
 	  #tutorial {
 		background: RGB(64, 64, 64, 0.9);
 		position: absolute;

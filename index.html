@@ -215,13 +215,38 @@
       		  <p>Parking Spaces</p>
       		</div>
         </div> 
+        <div id="meterContainer">
+          <div id="wrapper">
+            <svg id="meter">
+              <circle id="outline_curves" class="circle outline" 
+              cx="50%" cy="50%"></circle>
+               
+              <circle id="low" class="circle range" cx="50%" cy="50%"
+              stroke="#7CCCE5"></circle>
+               
+              <circle id="avg" class="circle range" cx="50%" cy="50%"
+              stroke="#C0C0C0"></circle>
+               
+              <circle id="high" class="circle range" cx="50%" cy="50%"
+              stroke="#E04644"></circle>
+               
+              <circle id="mask" class="circle" cx="50%" cy="50%" >
+              </circle>
+               
+              <circle id="outline_ends" class="circle outline"
+              cx="50%" cy="50%"></circle>
+            </svg>
+            <img id="meter_needle" src="gauge-needle.svg" alt="">
+            <label id="lbl" id="value" for="">0</label>
+          </div>
+        </div>
 		
         <div class="slidecontainer">
           <h1>Add houses pls</h1>
           <input type="range" min="1" max="100" value="50" class="slider" id="myRange" onchange="updateSlider(this.value)">
           <p>Houses: <span id="demo"></span></p>
         </div>   		
-		
+
         <div id="map">
         </div>
 
