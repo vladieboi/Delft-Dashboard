@@ -41,7 +41,9 @@
 
       p {
         font-family: Arial;
+		font-size: 14px;
       }
+
 /* ------------------------ CLASSES - */
 	  .context-menu li {
 		background: white
@@ -112,7 +114,7 @@
 
       .side {
         min-width: 18em;
-		    display: flex;
+		display: flex;
       }
 
       .context-menu {
@@ -196,6 +198,10 @@
         z-index: 0;
       }
 
+	  .listp{
+		padding-left: 0;
+		padding-right: 0;
+	  }
 /* ------------------------ IDS - */
 
       #map {
@@ -259,12 +265,14 @@
       /*orientation fix*/
       transform: rotate(270deg);
     }
+
+
     
 /* TUTORIAL TUTORIAL TUTORIAL */
 	  #tutorial {
 		background: RGB(64, 64, 64, 0.9);
 		position: absolute;
-		width: 70%;
+		width: 60%;
 		right: 0;
 		height: 100%;
 		display: flex;
@@ -302,16 +310,15 @@
 
       #side-home {
         height: 100%;
-        width: 25%;
+        width: 35%;
         float: left;
         justify-content: center;
-        align-items: center;
 		background: #FFFFFF;
       }
 
       #side-living {
         height: 100%;
-        width: 25%;
+        width: 35%;
         float: left;
         justify-content: center;
         align-items: center;
@@ -321,7 +328,7 @@
 
       #side-mobility {
         height: 100%;
-        width: 25%;
+        width: 35%;
         float: left;
         justify-content: center;
         align-items: center;
@@ -331,7 +338,7 @@
 
       #side-work {
         height: 100%;
-        width: 25%;
+        width: 35%;
         float: left;
         justify-content: center;
         align-items: center;
@@ -341,7 +348,7 @@
 
       #side-qol {
         height: 100%;
-        width: 25%;
+        width: 35%;
         float: left;
         justify-content: center;
         align-items: center;
@@ -351,7 +358,7 @@
 
       #side-sustain {
         height: 100%;
-        width: 25%;
+        width: 35%;
         float: left;
         justify-content: center;
         align-items: center;
@@ -361,7 +368,7 @@
 
       #side-facilities {
         height: 100%;
-        width: 25%;
+        width: 35%;
         float: left;
         justify-content: center;
         align-items: center;
@@ -377,10 +384,16 @@
       }
 
       #homeHeading {
-        display: block;
         text-align: center;
         width: 100%;
+		clear: both;
       }
+
+	  #homecopy {
+		list-style-type: none;
+		padding-left: 0;
+		padding-right: 0;
+	  }
 
 	  #logo {
 		width: 4em;
