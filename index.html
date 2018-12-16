@@ -74,13 +74,11 @@
 			<h1 id="homeHeading">Delft Dashboard</h1>
 		</li>	
 		<li>
-			<p> Welcome to the Delft Reactive Dashboard. This program is a reactive and 
-interactive approach at communicating the information contained in the 
-Delft 2040 impact analysis report, while visualising data about delft in an interactive way. <br><br>
+			<p> Welcome to the Delft Reactive Dashboard. This program is a reactive and interactive approach at communicating the information contained in the Delft 2040 impact analysis report, while visualising data about delft in an interactive way. <br><br>
 
-Delft is looking to expand the city by adding 15,000 homes and 10,000 jobs by 2040. The impact report seeks to explore how those expansions will impact the city. This program uses the 6 categories established in the impact analysis. These categories and their respective scores can be seen below, and throughout the program. <br><br>
+			Delft is looking to expand the city by adding 15,000 homes and 10,000 jobs by 2040. The impact report seeks to explore how those expansions will impact the city. This program uses the 6 categories established in the impact analysis. These categories and their respective scores can be seen below, and throughout the program. <br><br>
 
-To explore these impacts, the program offers the functionality to increase the number of houses and jobs in the city, up to 15,000 and 10,000 respectively. The data visualisations will change to reflect these changes, and give warnings when problems occur, such as too much housing leading to a drop in mobility</p>
+			To explore these impacts, the program offers the functionality to increase the number of houses and jobs in the city, up to 15,000 and 10,000 respectively. The data visualisations will change to reflect these changes, and give warnings when problems occur, such as too much housing leading to a drop in mobility</p>
 		</li>
 	
 		
@@ -89,31 +87,55 @@ To explore these impacts, the program offers the functionality to increase the n
     </div>
 
     <div id="side-living" class="side"> 
-      <!-- <ul class="context-menu">
-        <li>
-          <div class="wrapper">
-              <div class="wrapper-left">
-                <i class="material-icons md-48">home</i>
-              </div>
-              <div class="wrapper-right">
-                <h2 class="heading">Living Test</h2>
-                <input type="button" value="Greenery: OFF" id="GreenButton" onclick="greenOnOff();">
-              </div>
-          </div>
-          <p class="paragraph">BUTTON TURNS ON GREENERY</p>
+      <ul class="context-menu">
+		  
+		<li>
+			<h2 class="context-menu">1. Living</h2>
+			<p class="context-menu" style="margin-left: 0;">This category examines Delft’s housing situation. It looks at delft’s ability to house it citizens over the next 22 years. Activating these categories toggles their relevant visualisations on the map to the right. <br> <br> <b>This category is not fully functional.</b>
+			</p> 
+		</li>
+		  
+		<li>
+            <div class="wrapper">
+                <div class="wrapper-left">
+                    <i class="material-icons md-48">border_all</i> 
+                </div>
+                <div class="wrapper-right">
+                    <h2 class="heading">City Districts</h2>
+                    <input type="button" value="Traffic: OFF" id="TrafficButton" onclick="trafficOnOff();">
+                </div>
+            </div>
+			<p class="paragraph">placeholder</p>
+<!--            <p class="paragraph">This sub-category looks at the population living in the city of Delft and the districts they are living in. This visualisation shows Delft's districts and uses color to represent population density within the district. </p>-->
         </li>
-      </ul>   -->
+		  
+        <li>
+            <div class="wrapper">
+                <div class="wrapper-left">
+                    <i class="material-icons wrap">border_inner</i>
+                </div>
+                <div class="wrapper-right">
+                    <h2 class="heading">Neighborhoods</h2>
+                    <input type="button" value="Bike Tracks: OFF" id="BikeButton" onclick="bikeOnOff();">
+                </div>
+            </div>
+			<p class="paragraph">placeholder</p>
+<!--            <p class="paragraph">This sub-category looks at Delft's population and the smaller neighborhoods they live in. This is done by visualsing the neighborhoods using color to represent population density</p>-->
+        </li>
+
+        
+      </ul>
     </div>
 
     <div id="side-mobility" class="side">
       <ul class="context-menu">
 		  
 		<li>
-			<h2 class="context-menu">Mobility</h2>
-			<p class="context-menu" style="margin-left: 0;">This category looks at the mobility of the citizens of delft. it helps to analyse 
-how difficult it is for citizens to move around their city, and help identify 
-future mobility problems before they develop. this category is broken down 
-into 5 sub-categories; <br> <br> Clicking a particular data-set provides more information about said data-set.
+			<h2 class="context-menu">2. Mobility</h2>
+			<p class="context-menu" style="margin-left: 0;">This category looks at the mobility of the citizens of delft. it helps to analyse how difficult it is for citizens to move around their city, and help identify future mobility problems before they develop. this category is broken down into 5 sub-categories; 
+				
+			<br> <br> Clicking a particular data-set provides more information about said data-set.
+			
 			</p> 
 			
 		</li>
@@ -169,25 +191,44 @@ on the map. </p>
     </div>
       
     <div id="side-work" class="side">
-      <!-- <ul class="context-menu">
-        <li>
-          <div class="wrapper">
-              <div class="wrapper-left">
-                <i class="material-icons md-48">work</i>
-              </div>
-              <div class="wrapper-right">
-                <h2 class="heading">Work Test</h2>
-                <input type="button" value="Greenery: OFF" id="GreenButton" onclick="greenOnOff();">
-              </div>
-          </div>
-          <p class="paragraph">BUTTON TURNS ON GREENERY</p>
+      <ul class="context-menu">
+		  
+		<li>
+			<h2 class="context-menu">3. Work</h2>
+			<p class="context-menu" style="margin-left: 0;">This category looks at the work availability in Delft, and the 8 different job types offered by the city.
+				
+			<br><br><b>This category is not fully functional.</b>
+			
+			</p> 
+			
+		</li>
+		  
+		<li>
+            <div class="wrapper">
+                <div class="wrapper-left">
+                    <i class="material-icons md-48">work_outline</i>
+                </div>
+                <div class="wrapper-right">
+                    <h2 class="heading">Businesses</h2>
+                    <input type="button" value="Traffic: OFF" id="TrafficButton" onclick="trafficOnOff();">
+                </div>
+            </div>
+            <p class="paragraph">placeholder</p>
         </li>
-      </ul>   -->
+        
+      </ul>
     </div>
 
     <div id="side-qol" class="side">
       <ul class="context-menu">
         <li>
+			<h2 class="context-menu">4. Quallity of Life</h2>
+			<p class="context-menu" style="margin-left: 0;">This category focuses on showing the quality of life in the city. Categories show areas that affect the quality of life in the city and an overall resident satisfaction level in different districts of the city.			
+			</p> 
+			
+		</li>
+		  
+		<li>
           <div class="wrapper">
               <div class="wrapper-left">
                 <i class="material-icons md-48">nature_people</i>
@@ -200,6 +241,18 @@ on the map. </p>
           <p class="paragraph">This overlay displays all of the green areas in the city of Delft.</p>
         </li>
         
+		<li>
+            <div class="wrapper">
+                <div class="wrapper-left">
+                    <i class="material-icons md-48">insert_emoticon</i>
+                </div>
+                <div class="wrapper-right">
+                    <h2 class="heading">Satisfaction Levels</h2>
+                    <input type="button" value="Traffic: OFF" id="TrafficButton" onclick="trafficOnOff();">
+                </div>
+            </div>
+            <p class="paragraph">This data overlay shows resident satisfaction levels in each district.</p>
+        </li>
       </ul>  
     </div>
 
@@ -221,20 +274,42 @@ on the map. </p>
     </div>
 
     <div id="side-facilities" class="side">
-<!--       <ul class="context-menu">
+	  <ul class="context-menu">
         <li>
+			<h2 class="context-menu">6. Facilities</h2>
+			<p class="context-menu" style="margin-left: 0;">The facilities category looks at the different types of facilities and services offered by the city of delft, and the service range of these facilitates.  these facilities have been broken down into 5 sub categories; health institutions, retail, educational, sports and cultural facilities. turning on these categories displays their locations and their service bubbles. Services bubble represent the range in which that store attracts customers, while the color intensity represents the number of customers. 
+			<b>This category is not fully functional.</b>
+			</p> 
+			
+		</li>
+		  
+		<li>
           <div class="wrapper">
               <div class="wrapper-left">
-                <i class="material-icons md-48">school</i>
+                <i class="material-icons md-48">store
+</i>
               </div>
               <div class="wrapper-right">
-                <h2 class="heading">Facilities Test</h2>
+                <h2 class="heading">General Stores</h2>
                 <input type="button" value="Greenery: OFF" id="GreenButton" onclick="greenOnOff();">
               </div>
           </div>
-          <p class="paragraph">BUTTON TURNS ON GREENERY</p>
+          <p class="paragraph">placeholder</p>
         </li>
-      </ul>   -->
+        
+		<li>
+            <div class="wrapper">
+                <div class="wrapper-left">
+                    <i class="material-icons md-48">local_grocery_store</i>
+                </div>
+                <div class="wrapper-right">
+                    <h2 class="heading">Supermarkets</h2>
+                    <input type="button" value="Traffic: OFF" id="TrafficButton" onclick="trafficOnOff();">
+                </div>
+            </div>
+            <p class="paragraph">placeholder</p>
+        </li>
+      </ul>
     </div>
 		  
     <div class ="container-map">
