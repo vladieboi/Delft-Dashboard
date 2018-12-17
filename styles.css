@@ -54,6 +54,8 @@
         color: #FFFFFF;
         fill: #FFFFFF;
 		background: rGB(0, 120, 200);
+		padding-top: 12px;
+		padding-bottom: 8px;
       }
 
 	  .navlist:hover {
@@ -92,14 +94,22 @@
         display: grid;
         align-items: center;
         justify-content: center;
-		    background: RGB(0, 120, 200);
+		background: RGB(0, 120, 200);
       }
 
       .nav-menu {
         list-style-type: none;
         padding-left: 0;
-		    background: #FFFFFF;
+		background: #FFFFFF;
+		margin-top: 25%;
+		margin-bottom: 75%;
       }
+
+	  .nav-logo {
+		list-style-type: none;
+		padding-left: 0;
+		margin-top: 0;
+	  }
 
       .material-icons.md-18 { font-size: 18px; }
       .material-icons.md-24 { font-size: 24px; } /* Default */
@@ -120,14 +130,17 @@
 		color: #707070;
 
       }
+	  
+	  .navlbl {
+		  font-size: 12px;
+		  margin: 0;
+	  }
 
       .context-menu {
         list-style-type: none;
-        padding-left: 0;
         background: FFFFFF;
-        width: 100%;
-        padding-left: 8px;
-        padding-right: 8px;
+        padding-left: 24px;
+		padding-right: 24px;
       }
 
       .wrapper {
@@ -135,7 +148,7 @@
         display: block;
         height: 4em;
         position: relative;
-        padding-left: 16px;
+        padding-left: 32px;
         padding-right: 16px;
         padding-top: 16px;
       }
