@@ -65,7 +65,6 @@ function initMap() {
     	center: {lat: 52.011, lng: 4.357},
     	zoom: 13,
     	disableDefaultUI: true,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
 	});
   wijkenLayer = new google.maps.Data();
   wijkenLayer.addGeoJson(wijken); 
