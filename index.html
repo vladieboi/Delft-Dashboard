@@ -7,6 +7,7 @@
     <link href="styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   </head>
 
   <body>
@@ -92,7 +93,7 @@
 		  
 		<li>
 			<h2 class="context-menu">1. Living</h2>
-			<p class="context-menu" style="margin-left: 0;">This category examines Delft’s housing situation. It looks at delft’s ability to house it citizens over the next 22 years. Activating these categories toggles their relevant visualisations on the map to the right. <br> <br> <b>This category is not fully functional.</b>
+			<p class="context-menu" style="margin-left: 0;">This category examines Delft’s housing situation. It looks at delft’s ability to house it citizens over the next 22 years. Activating these categories toggles their relevant visualisations on the map to the right. <br> <br> <b>This page is currently work in progress.</b>
 			</p> 
 		</li>
 		  
@@ -133,10 +134,7 @@
 		  
 		<li>
 			<h2 class="context-menu">2. Mobility</h2>
-			<p class="context-menu" style="margin-left: 0;">This category looks at the mobility of the citizens of delft. it helps to analyse how difficult it is for citizens to move around their city, and help identify future mobility problems before they develop. this category is broken down into 5 sub-categories; 
-				
-			<br> <br> Clicking a particular data-set provides more information about said data-set.
-			
+			<p class="context-menu" style="margin-left: 0;">This category looks at the mobility of the citizens of Delft. it helps to analyse how difficult it is for citizens to move around their city, and help identify future mobility problems before they develop. this category is broken down into 5 sub-categories; 			
 			</p> 
 			
 		</li>
@@ -198,7 +196,7 @@ on the map. </p>
 			<h2 class="context-menu">3. Work</h2>
 			<p class="context-menu" style="margin-left: 0;">This category looks at the work availability in Delft, and the 8 different job types offered by the city.
 				
-			<br><br><b>This category is not fully functional.</b>
+			<br><br><b>This page is currently work in progress.</b>
 			
 			</p> 
 			
@@ -258,28 +256,24 @@ on the map. </p>
     </div>
 
     <div id="side-sustain" class="side">
-      <!-- <ul class="context-menu">
+	  <ul class="context-menu">
         <li>
-          <div class="wrapper">
-              <div class="wrapper-left">
-                <i class="material-icons md-48">restore_from_trash</i>
-              </div>
-              <div class="wrapper-right">
-                <h2 class="heading">Sustain Test</h2>
-                <input type="button" value="Greenery: OFF" id="GreenButton" onclick="greenOnOff();">
-              </div>
-          </div>
-          <p class="paragraph">BUTTON TURNS ON GREENERY</p>
-        </li>
-      </ul>   -->
+			<h2 class="context-menu">5. Sustainability</h2>
+			<p class="context-menu" style="margin-left: 0;">The sustainability category looks at the environmental aspects of the city of Delft, broken down by each neighbourhood or region. Delft's sustainability is broken down into 4 subcategories,  Energy levels, Heat levels, Ecological footprint and C02 Levels. Turning on these categories displays the relevant information per neighbourhood/district of Delft. <br> <br>
+			<b>This page is currently work in progress.</b>
+			</p> 
+			
+		</li>
+	  </ul>
     </div>
 
     <div id="side-facilities" class="side">
 	  <ul class="context-menu">
         <li>
 			<h2 class="context-menu">6. Facilities</h2>
-			<p class="context-menu" style="margin-left: 0;">The facilities category looks at the different types of facilities and services offered by the city of delft, and the service range of these facilitates.  these facilities have been broken down into 5 sub categories; health institutions, retail, educational, sports and cultural facilities. turning on these categories displays their locations and their service bubbles. Services bubble represent the range in which that store attracts customers, while the color intensity represents the number of customers. 
-			<b>This category is not fully functional.</b>
+			<p class="context-menu" style="margin-left: 0;">The facilities category looks at the different types of facilities and services offered by the city of delft, and the service range of these facilitates.  these facilities have been broken down into 5 sub categories; health institutions, retail, educational, sports and cultural facilities. turning on these categories displays their locations and their service bubbles.
+			<br> <br>
+			<b>This page is currently work in progress.</b>
 			</p> 
 			
 		</li>
@@ -379,9 +373,9 @@ on the map. </p>
         </div>
 		
         <div class="slidecontainer">
-          <h1>Add houses pls</h1>
-          <input type="range" min="1" max="100" value="50" class="slider" id="myRange" onchange="updateSlider(this.value)">
-          <p>Houses: <span id="demo"></span></p>
+          <h3>Add houses</h3>
+          <input type="range" min="1" max="100" value="0" class="slider" id="myRange" onchange="updateSlider(this.value)">
+          <p>House(s): <span id="demo"></span></p>
         </div>   		
 
         <div id="map">
