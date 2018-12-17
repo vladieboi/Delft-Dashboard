@@ -376,7 +376,7 @@
         background: #FFFFFF;
       }
 
-      #BikeButton, #TrafficButton, #GreenButton, #ParkingButton {
+      #BikeButton, #TrafficButton, #GreenButton, #ParkingButton, #NeighbourhoodsButton, #DistrictsButton {
         display: inline;
         clear: right;
         float: right;

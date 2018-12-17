@@ -103,7 +103,7 @@
                 </div>
                 <div class="wrapper-right">
                     <h2 class="heading">City Districts</h2>
-                    <input type="button" value="Traffic: OFF" id="TrafficButton" onclick="trafficOnOff();">
+                    <input type="button" value="OFF" id="DistrictsButton" onclick="districtsOnOff();">
                 </div>
             </div>
 			<p class="paragraph">placeholder</p>
@@ -116,8 +116,8 @@
                     <i class="material-icons wrap">border_inner</i>
                 </div>
                 <div class="wrapper-right">
-                    <h2 class="heading">Neighborhoods</h2>
-                    <input type="button" value="Bike Tracks: OFF" id="BikeButton" onclick="bikeOnOff();">
+                    <h2 class="heading">Neighbourhoods</h2>
+                     <input type="button" value="OFF" id="NeighbourhoodsButton" onclick="buurtenOnOff();">
                 </div>
             </div>
 			<p class="paragraph">placeholder</p>
@@ -329,6 +329,12 @@ on the map. </p>
       		<div id="legend-parkingspaces" class="legend-hidden">
       		  <p>Parking Spaces</p>
       		</div>
+      		<div id="legend-buurten" class="legend-hidden">
+      		  <p>Neighbourhoods</p>
+      		  </div>
+      		  <div id="legend-wijken" class="legend-hidden">
+      		  <p>Districts</p>
+      		</div>
         </div> 
         <div id="meterContainer">
           <div id="wrapper">
@@ -337,13 +343,20 @@ on the map. </p>
               cx="50%" cy="50%"></circle>
                
               <circle id="low" class="circle range" cx="50%" cy="50%"
-              stroke="#CA0020"></circle>
+              stroke="#003D66"></circle>
+              <circle id="low2" class="circle range" cx="50%" cy="50%"
+              stroke="#92C5DE"></circle>
+              <circle id="low3" class="circle range" cx="50%" cy="50%"
+              stroke="#D4E0E6"></circle>
                
               <circle id="avg" class="circle range" cx="50%" cy="50%"
               stroke="#FFCEB8"></circle>
+              <circle id="avg2" class="circle range" cx="50%" cy="50%"
+              stroke="#F4A582"></circle>
                
               <circle id="high" class="circle range" cx="50%" cy="50%"
-              stroke="#003D66"></circle>
+              stroke="#CA0020"></circle>
+               
                
               <circle id="mask" class="circle" cx="50%" cy="50%" >
               </circle>
