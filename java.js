@@ -31,7 +31,18 @@ var alertColor;
 var colorGreen;
 var colorParking;
 
+var home = document.getElementById('side-home');
 
+var white = document.getElementById('white');
+var blue = document.getElementById('blue');
+
+//if (home.style.display == 'none'){
+//	blue.style.display = 'inline-grid';
+//	white.style.display = 'none';
+//} else {
+//	blue.style.display = 'none';
+//	white.style.display = 'inline-grid';
+//}
 
 // ---  MAP DISPLAY 
 function initMap() {
@@ -330,6 +341,14 @@ function active(elementID) {
 	}
 	var active = document.getElementById(elementID);
 	active.classList.toggle("navlistActive");
+	
+	if (home.style.display == 'none'){
+		white.style.display = 'none';
+		blue.style.display = 'inline-grid';
+	} else {
+		blue.style.display = 'none';
+		white.style.display = 'inline-grid';
+	}
 }
 
 function checkHide() {
@@ -337,6 +356,23 @@ function checkHide() {
 	var tut = document.getElementById("tutorial");
 	tut.style.display = 'none';
 }
+
+
+
+	
+
+//function logo() {
+//	var white = document.getElementById('white');
+//	var blue = document.getElementById('blue');
+//	
+//	if (white.style.display == 'none') {
+//		white.style.display = 'inline-grid';
+//		blue.style.display = 'none';
+//	} else {
+//		white.style.display = 'none';
+//		blue.style.display = 'inline-grid';
+//	}
+//}
 
 //
 //function logoCycle() {
